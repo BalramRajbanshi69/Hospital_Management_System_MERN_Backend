@@ -40,8 +40,18 @@ const appointmentSchema = new Schema({
     doctor: {
         type: String,
         required: true,
-        enum: ['doctor1', 'doctor2', 'doctor3', 'doctor4', 'doctor5', 
-               'doctor6', 'doctor7', 'doctor8', 'doctor9', 'doctor10']
+        enum: [
+            'Dr. Sarah Johnson',  // Added space after Dr.
+            'Dr. James Wilson',
+            'Dr. Emily Williams',
+            'Dr. Michael Chen',
+            'Dr. Lisa Anderson',
+            'Dr. Robert Taylor',
+            'Dr. Maria Garcia',
+            'Dr. David Kim',
+            'Dr. Jennifer Lee',
+            'Dr. Thomas Brown'
+        ]
     },
      department: {
         type: String,
