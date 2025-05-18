@@ -9,11 +9,7 @@ const dbConnect = require("./Database/db");
 dbConnect();
 
 // middleware
-app.use(cors({
-    origin: ['http://localhost:5173', 'https://hosms-mern.vercel.app'],
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    allowedHeaders: ['Content-Type', 'auth-token']
-}));
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
