@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const Contact = require('../models/Contact_model');
 const FetchUser = require("../middleware/FetchUser");
+const { sendEmail } = require("../services/sendEmail");
 
 
 // Contact form submission route with validation
@@ -23,6 +24,13 @@ router.post(
 
       // Save to database
       await newContact.save();
+
+      await sendEmail({
+         name,
+        email,
+        subject,
+        message,
+      })
 
       res.status(201).json({
         success: true,
