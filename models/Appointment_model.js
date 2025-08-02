@@ -25,7 +25,7 @@ const appointmentSchema = new Schema({
         enum:['male','female','others']
     },
     date:{
-        type:Date,
+        type:String,
         required:true
     },
     time: {

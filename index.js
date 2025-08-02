@@ -10,9 +10,10 @@ dbConnect();
 
 // middleware
 app.use(cors({
-    origin:["https://hosms-mern.vercel.app","http:localhost:5173"],
+    origin:["https://hosms-mern.vercel.app","http://localhost:5173"],
     methods:["GET","POST","PATCH","PUT","DELETE"],
-    credentials:true
+    credentials:true,
+    allowedHeaders: ['Content-Type', 'auth-token'],
 }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));

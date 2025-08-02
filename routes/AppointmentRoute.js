@@ -9,14 +9,17 @@ router.post('/book-appointments', FetchUser, async (req, res) => {
 
         const appointment = new Appointment({
             user: req.user.id,
+            date: new Date(req.body.date).toISOString(),
             ...req.body
         });
 
-        const savedAppointment = await appointment.save();
+    const savedAppointment = await appointment.save();
+
+
         res.status(201).json({
             success: true,
             message: 'Appointment booked successfully',
-            appointment: savedAppointment
+            data: savedAppointment
         });
     } catch (error) {
         res.status(400).json({
